@@ -1,0 +1,34 @@
+{
+  "version": 2018052116,
+  "common_permission": {
+      "notification": {
+          "delay_time": 1000,
+          "type_id": 1,
+          "describe": "通知读取权限开启",
+          "intent": {
+              "action": "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
+          },
+          "step": [
+              {
+                  "find_node": {
+                      "find_text": "游戏超人",
+                      "scroll_node": "android.widget.ListView",
+                      "click_type": "parent",
+                      "is_permission_open": {
+                          "state": {
+                              "in_parent_index": 1,
+                              "check_node_type": "android.widget.CheckBox"
+                          }
+                      }
+                  }
+              },
+              {
+                  "find_node": {
+                      "find_text": "确定||允许",
+                      "click_type": "self"
+                  }
+              }
+          ]
+      }
+  }
+}

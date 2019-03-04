@@ -128,6 +128,12 @@ config("compiler") {
 
   ldflags = []
 
+    #patch {
+    ldflags += [
+      "/ignore:4099",
+    ]
+    #}
+
   if (use_lld) {
     # lld defaults to writing the current time in the pe/coff header.
     # For build reproducibility, pass an explicit timestamp. See

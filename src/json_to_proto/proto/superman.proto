@@ -1,0 +1,153 @@
+message "common_permission" {
+  required double version = 0
+
+  message COMMON_PERMISSION {
+
+    message NOTIFICATION {
+      required double delay_time = 0
+      required double type_id = 1
+      required string describe = 2
+
+      message INTENT {
+        required string action = 0
+      }
+
+      required INTENT intent = 3
+
+      message STEP {
+
+        message FIND_NODE {
+          required string find_text = 0
+          required string scroll_node = 1
+          required string click_type = 2
+
+          message IS_PERMISSION_OPEN {
+
+            message STATE {
+              required double in_parent_index = 0
+              required string check_node_type = 1
+            }
+
+            required STATE state = 0
+          }
+
+          required IS_PERMISSION_OPEN is_permission_open = 3
+        }
+
+        required FIND_NODE find_node = 0
+      }
+
+      repeated STEP step = 4
+    }
+
+    required NOTIFICATION notification = 0
+
+    message NOTIFICATION_SPARE {
+      required double delay_time = 0
+      required double type_id = 1
+      required string describe = 2
+
+      message INTENT {
+        required string action = 0
+      }
+
+      required INTENT intent = 3
+
+      message STEP {
+
+        message FIND_NODE {
+          required string find_text = 0
+          required string scroll_node = 1
+          required string click_type = 2
+
+          message IS_PERMISSION_OPEN {
+
+            message STATE {
+              required double in_parent_index = 0
+              required string check_node_type = 1
+            }
+
+            required STATE state = 0
+          }
+
+          required IS_PERMISSION_OPEN is_permission_open = 3
+        }
+
+        required FIND_NODE find_node = 0
+      }
+
+      repeated STEP step = 4
+    }
+
+    required NOTIFICATION_SPARE notification_spare = 1
+
+    message NOTIFICATION_REVERSE {
+      required double delay_time = 0
+      required double type_id = 1
+      required string describe = 2
+
+      message INTENT {
+        required string action = 0
+      }
+
+      required INTENT intent = 3
+
+      message STEP {
+
+        message FIND_NODE {
+          required string find_text = 0
+          required string scroll_node = 1
+          required string click_type = 2
+        }
+
+        required FIND_NODE find_node = 0
+      }
+
+      repeated STEP step = 4
+    }
+
+    required NOTIFICATION_REVERSE notification_reverse = 2
+
+    message NOTIFICATION_SPARE_REVERSE {
+      required double delay_time = 0
+      required double type_id = 1
+      required string describe = 2
+
+      message INTENT {
+        required string action = 0
+      }
+
+      required INTENT intent = 3
+
+      message STEP {
+
+        message FIND_NODE {
+          required string find_text = 0
+          required string scroll_node = 1
+          required string click_type = 2
+        }
+
+        required FIND_NODE find_node = 0
+      }
+
+      repeated STEP step = 4
+    }
+
+    required NOTIFICATION_SPARE_REVERSE notification_spare_reverse = 3
+  }
+
+  required COMMON_PERMISSION common_permission = 1
+
+  message CONTENT {
+    required string id = 0
+
+    message ROM_CONFIG {
+      required string ro.build.version.emui = 0
+    }
+
+    repeated ROM_CONFIG rom_config = 1
+Error - Cannot parse. Array of objects is having arrays/dissimilar objects
+  }
+
+  repeated CONTENT content = 2
+}

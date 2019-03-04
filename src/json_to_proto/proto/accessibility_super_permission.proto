@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+//option optimize_for = LITE_RUNTIME;
+
+package super_permission;
+
+//
+message State {
+  uint32 in_parent_index = 1;
+  string check_node_type = 2;
+}
+message IsPermissionOpen {
+  State state = 1;
+}
+
+message FindNode {
+  string find_text = 32;
+  string scroll_node = 2312321;
+  string click_type = 3321312;
+  IsPermissionOpen is_permission_open = 43213;
+}
+
+message Step {
+  FindNode find_node = 1;
+}
+
+//跳转到的action
+message Intent {
+  string action = 1;
+}
+
+message Notification {
+  uint32 delay_time = 2;
+  uint32 type_id = 3;
+  string describe = 4;
+  Intent intent = 5;
+  repeated Step step = 6;
+}
+message CommonPermission {
+  map<string, Notification> notification_map = 1;
+}
+
+////////////////////////////////////////////////////////////////
+message RomConfig {
+  map<string, string> config_map = 1;
+}
+
+message Content {
+  string id = 1;
+  RomConfig rom_config = 2;
+  map<string, string> map = 3;
+}
+
+////////////////////////////////////////////////////////////////
+message Permission {
+  uint64 version = 1;
+  CommonPermission common_permission = 2;
+  //Content content = 2;
+}

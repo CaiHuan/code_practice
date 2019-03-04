@@ -1,0 +1,38 @@
+#create by caihuan
+#email: cai.huan25@gmail.com
+executable("tutorial_one") {
+  libs = []
+  sources = [
+    "main.cc"
+  ]
+
+  deps = [
+    "//third_party/glfw",
+    "//third_party/glad"
+  ]
+
+  include_dirs = [
+    "//third_party/glad/include"
+  ]
+
+  if (is_win) {
+    if ("x86" == target_cpu) {
+
+    } else {
+      libs += [
+        "$root_out_dir/libs/glfw3.lib"
+      ]
+    }
+  }
+
+  if (is_mac) {
+    libs += [
+      "$root_out_dir/libs/libglfw3.a",
+      "QuartzCore.framework",
+      "Cocoa.framework",
+      "Foundation.framework",
+      "IOKit.framework"
+    ]
+  }
+
+}

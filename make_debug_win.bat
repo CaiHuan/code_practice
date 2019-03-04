@@ -1,0 +1,1 @@
+call gn gen out/debug --sln=opengl_tutorial_one --ide=vs2017 --filters=//src/opengl:tutorial_one --args="is_debug=true is_component_build=false is_clang=false"

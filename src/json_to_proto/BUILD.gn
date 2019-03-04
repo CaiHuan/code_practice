@@ -1,0 +1,39 @@
+#create by caihuan
+#email: cai.huan25@gmail.com
+executable("protobuf_demo") {
+  sources = [
+    "build_proto_from_json.cc",
+    "build_proto_from_json.h",
+    "convert_json_to_protobuf.cc",
+    "convert_json_to_protobuf.h",
+    "json_to_protobuf_serializer.cc",
+    "json_to_protobuf_serializer.h",
+    "convert_switches.cc",
+    "convert_switches.h",
+    "main.cc"
+  ]
+
+  include_dirs = [
+    "//third_party/protobuf/src/",
+    "//self/protobuf_demo/third_party",
+  ]
+  
+  defines = [
+    "RAPIDJSON_HAS_STDSTRING=1",
+    "_CRT_SECURE_NO_WARNINGS=1"
+  ]
+  
+  cflags = [
+    "/wd4541",
+    "/wd4146",
+    "/wd4267",
+    "/wd4125",
+    "/wd4800",
+  ]
+  deps = [
+    "//base",
+    "//third_party/protobuf:protobuf_lite",
+    "//third_party/protobuf:protobuf_full",
+    "//third_party/protobuf:protoc"
+  ]
+}

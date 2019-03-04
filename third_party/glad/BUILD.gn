@@ -1,0 +1,12 @@
+source_set("glad") {
+
+  include_dirs = [
+    "//third_party/glad/include"
+  ]
+
+  sources = [
+    "src/glad.c",
+    "include/glad/glad.h",
+    "include/HKR/khrplatform.h"
+  ]
+}

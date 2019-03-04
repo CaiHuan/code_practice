@@ -1,0 +1,7 @@
+#create by caihuan
+#email: cai.huan25@gmail.com
+executable("cpp_smart_ptr") {
+  sources = [
+    "main.cc"
+  ]
+}

@@ -1,0 +1,15 @@
+copy("glfw") {
+  if (is_mac) {
+    sources = [ "libs/mac/libglfw3.a" ]
+    outputs = [ "$root_out_dir/libs/libglfw3.a" ]
+  }
+  if (is_win) {
+    if (target_cpu == "x86") {
+      sources = [ "libs/win/glfw3_x86.lib" ]
+      outputs = [ "$root_out_dir/libs/glfw3.lib" ]
+    } else {
+      sources = [ "libs/win/glfw3_x64.lib" ]
+      outputs = [ "$root_out_dir/libs/glfw3.lib" ]
+    }
+  }
+}

@@ -16,7 +16,7 @@
 group("main") {
   deps = [
     #"//src/cpp/smart_ptr:cpp_smart_ptr"
-    #"//src/opengl:tutorial_one"
-    "//src/demo"
+    "//src/opengl:tutorial_one"
+    #"//src/demo"
   ]
 }
